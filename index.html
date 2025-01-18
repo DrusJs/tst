@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Сайт VPN</title>
+        <link rel="shortcut icon" href="" type="image/x-icon">
+    </head>
+    
+    <body style="background-color: black; color: white; display: flex; align-items: center; gap: 20px; flex-direction: column;"> 
+        <h1 style="text-align: center;">Скачать VPN</h1>
+        <p style="text-align: center; font-size: 20px; font-weight: 700;">Для того чтобы скачать "наш" VPN - пройдите авторизацию участника</p>
+        <input type="text" placeholder="Пароль" id="input">
+        <p id="sub" style="text-align: center; font-size: 20px; font-weight: 700; display: none;"></p>
+        <button onclick="exit()">Войти</button> 
+    </body>
+
+    <script>
+        function exit() { 
+            let pass = "2012"
+            let txt = document.querySelector("#sub")
+
+            if (document.querySelector("#input").value == pass) {
+                txt.style.display = "block"
+                txt.style.color = "green"
+                document.querySelector("#input").remove()
+                txt.innerHTML = `
+                <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                    <a style="color: green;" href="https://naruzhu.click/ulta2">Доступ к VPN</a>                
+                    <p>Ваш ключ доступа: 33f9749a-57dc-47d0-a8b6-ad892da72eb3</p>                
+                </div>
+                `
+            } else {
+                txt.style.display = "block"
+                txt.style.color = "red"
+                document.querySelector("#input").remove()
+                txt.innerHTML = `Лжец`
+            }
+        }
+    </script>
+
+</html>
